@@ -1,5 +1,9 @@
 ## 1. Nodarbība
       
+      - Sourcecode;
+      - html tags;
+      - symbols;
+      - hidden symbols (enter between html lines);
       - GitHub apgūšana - repozitoriji;
       - Piezīmju klades izveidošana Github;
       - md faili;
