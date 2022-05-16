@@ -1,1 +1,1 @@
-##3.nodarbības piezīmes
+# 3.lekcijas piezīmes
