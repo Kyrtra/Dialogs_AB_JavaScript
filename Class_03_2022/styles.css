@@ -1,0 +1,15 @@
+
+table, th, td {
+    border: 1.5px solid;
+    border-style: inset;
+    text-align: center;
+  }
+
+.purple {
+    color:rgb(123, 100, 177);
+
+}
+
+
+
+
