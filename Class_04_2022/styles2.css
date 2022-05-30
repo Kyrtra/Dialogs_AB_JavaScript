@@ -1,0 +1,27 @@
+.chess_board{
+   border-collapse: collapse;
+   border-spacing: 0; 
+}
+
+.chess_board th{
+    padding: 2em;
+}
+
+.chess_board td{
+    border:1px;
+    border-style: solid;
+    height: 3em;
+    width: 3em;
+    text-align: center;
+    font-size:32px;
+    font-weight: 550;
+}
+
+.chess_board_light{
+    background: #eee;
+    
+}
+
+.chess_board_dark{
+    background: #aaa;
+}

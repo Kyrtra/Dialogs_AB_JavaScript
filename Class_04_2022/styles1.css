@@ -1,36 +1,37 @@
 body{
     background-color: beige;
-}
+    }
 
 a:link {
     color: darkgreen;
     background-color: transparent;
     text-decoration: none;
   }
+
   a:hover {
     color: rgb(118, 158, 127);
     background-color: transparent;
     text-decoration: underline;
   }
+
 h2{
     color: darkgreen;
-}
+  }
+
 h3{
     color: darkgreen;
-}
-
+  }
 
 p{
     text-align:justify;
     font-size: 14pt;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
+ }
 
 ul{
     font-size:13pt;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        
-}
+  }
 
 .list{
     display: inline-block;
@@ -39,8 +40,7 @@ ul{
     margin-left: 1%;
     margin-top: -1.5%;
     position: relative;
-    
-}
+    }
 
 
 
