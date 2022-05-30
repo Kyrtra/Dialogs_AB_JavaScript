@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--<link rel = "icon" href = "../images/rook.ico" type = "image/x-icon"> -->
+<body>
+<head>
+<link rel="stylesheet" href="styles3.css">
+<title>
+    Datu ievad-formas
+</title>
+<!--Name, Surname, e-mail (verification @), password (hidden), date, submit button-->
+<!--"The names and values of the non-file form controls are sent to the server as name=value pairs joined with ampersands." - ampersand - tā ir tādā zīme - &-->
+<h2>Personas dati:</h2>
+
+
+<form action="/action_page.php" autocomplete="off">
+<label for="Birthday"> Dzimšanas diena:</label>
+<input type="date" id="birthday" name="birthday">
+<input type="submit" value="Submit">
+</form>
+<br>
+
+<form action="/action_page.php" method="get" autocomplete="off"><!--autocomplete on/off means if the previously typed and submitted usernames or e-mails
+ will show up or not in the list of available choices once you start typing-->
+ <!--method="get" or method="post": "get"- the password, username, e-mail or other data will show up in browser's address or under inspection,
+"post"- they won't show up-->
+  <label for="fname">Vārds:</label><br>
+  <input type="text" id="fname" name="fname" value="Ilze"><br>
+  <label for="lname">Uzvārds:</label><br>
+  <input type="text" id="lname" name="lname" value="S"> <br>
+  <label for="e-mail">  E-pasts:</label><br>
+  <input type="email" id="e-mail" name="e-mail" value="ilze.s@yahoo.com">
+  <br>
+  <br>
+  <input type="submit" value="Submit">
+
+</form>
+<br>
+<br>
+<form action="/action_page.php" method="get" autocomplete="off">
+<label for="username">Lietotājvārds:</label><br>
+<input type="text" id="username" value=""><br><br>
+<label for="password">Parole:</label><br>
+<input type="password" id="password" name="password">
+<br>
+<br>
+<input type="submit" value="Submit">
+</form><br><br>
+
+<h4>Papildus komentāri šeit:</h4>  
+<form  autocomplete="off">
+<textarea name= "message" rows="10" cols="30"> </textarea>
+<br><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
