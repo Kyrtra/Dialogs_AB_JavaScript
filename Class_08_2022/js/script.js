@@ -11,24 +11,25 @@
 
  */
 
- //String to binary
- var bit_number =7^1048;
- var y = (x << (bit_number-7)) >> bit_number;
- var z = String(y);
- y = (x << (bit_number-6)) >> bit_number;
- z = z + String(y);
- y = (x << (bit_number-5)) >> bit_number;
- z = z + String(y);
- y = (x << (bit_number-4)) >> bit_number;
- z = z + String(y);
- y = (x << bit_number-3) >> bit_number;
- z = z + String(y);
- y = (x << (bit_number-2)) >> bit_number;
- z = z + String(y);
- y = (x << bit_number-1) >> bit_number;
- z = z + String(y);
- y = (x << bit_number-0) >> bit_number;
- z = z + String(y);
+ var bit_sequence = "";
+ var zero_th_bit =(x >>0) & 1;
+/*
+x >> 0 -> 60(dec) atbilst 0011 1100(bin)
+0011 1100 >> 0 -> 0011 1100
+  1 dec atbilst 0000 0001 (bin)
+(x>>0) & 1 -> 0011 1100
+              0000 0001
+              0000 0000 (bin) - > 0(dec)
+*/
+
+console.log ("0.bita atttēlošana ( pēc nobīdes pa 0 bitiem pa labi un 'rezināšanas' ar 1)"zero_th_bit);
+bit_sequence = zero_th_bit + bit_sequence;
+console.log (bit_sequence);
+
+zero_th_bit = (x >>1)&1;
+
+
+
 
  document.getElementById("bin").innerHTML = z;
 
@@ -38,8 +39,6 @@
  //sākumā var atrast un pielietot standarta JS funkciju,
  //kas pārveido dec to bin
  //if, for utt. pagaidām izmantot nedrīkst
-
-
 
 
 
