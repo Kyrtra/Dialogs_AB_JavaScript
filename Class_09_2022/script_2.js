@@ -65,44 +65,66 @@ console.log(""+g);
 //Bankas aprēķini
 
 var string = 'Anita Priedīte';
-var e = 1000; //sākuma summa
-var z = 0.01; //1 gada procentu likmes vērtība
+var nauda = 15000; //sākuma summa
+var likme = 0.01; //1 gada procentu likmes vērtība
+var procenti_1 = (likme*nauda);                 
+var procenti_2 = (procenti_1 + nauda)*likme*2;
+var procenti_3 =(procenti_2 + nauda)*likme*3;
+var procenti_4 = (procenti_3 + nauda)*likme*4;
+var procenti_5 = (procenti_4 + nauda)*likme*5;
 
-/*var i = 3; //gadi
-var s;
-s = ((z*e)/100)*i;
-console.log(""+s); */
-
-
-
-var i;   //1 gada gala summa
-var j;
-var k;
-var l;
-var m;
-
-
-
-i = ((z*e))/100*1;
-j = ((z*e)/100)*2;
-k = ((z*e)/100)*3;
-l = ((z*e)/100)*4;
-m = ((z*e)/100)*5;
-
-myNumber = k;
-roundedString = myNumber.toFixed(2);
-rounded_number =  Number(roundedString);
-
-console.log(""+k);
 
 document.getElementById("vārds").innerHTML = ("Cien.,") + string + ("!");
-document.getElementById("sākuma_summa").innerHTML = ("Mēs, banka, pieņemot, ka Jums kontā ir ")+e + (" EUR.");
-
-document.getElementById("viens_gads").innerHTML =("Uz 1 gadu procentos Jūs saņemsiet ")+ i + ( " EUR.");
-document.getElementById("divi_gadi").innerHTML =("Uz 2 gadiem procentos Jūs saņemsiet ")+ j + ( " EUR.");
-document.getElementById("trīs_gadi").innerHTML =("Uz 3 gadiem procentos Jūs saņemsiet ")+ rounded_number + ( " EUR.");
-document.getElementById("četri_gadi").innerHTML =("Uz 4 gadiem procentos Jūs saņemsiet ") + l + ( " EUR.");
-document.getElementById("pieci_gadi").innerHTML =("Uz 5 gadiem procentos Jūs saņemsiet ")+ m + ( " EUR.");
-
+document.getElementById("sākuma_summa").innerHTML = ("Ar prieku paziņojam, ka Jums kontā ir izveidojies uzkrājums - ")+nauda + (" EUR.");
+document.getElementById("viens_gads").innerHTML =("Pēc 1 gada Jūs  procentos saņemsiet ")+ procenti_1.toFixed(2) + ( " EUR, ")+(" procentu likme ")+("1 %.");
+document.getElementById("divi_gadi").innerHTML =("Pēc 2 gadiem Jūs procentos saņemsiet ")+ procenti_2.toFixed(2) + ( " EUR, ")+("procentu likme ") + ("2 %.");
+document.getElementById("trīs_gadi").innerHTML =("Pēc 3 gadiem Jūs procentos saņemsiet ")+ procenti_3.toFixed(2) + ( " EUR, ") +("procentu likme ") +("3 %.");
+document.getElementById("četri_gadi").innerHTML =("Pēc 4 gadiem Jūs procentos saņemsiet ")+ procenti_4.toFixed(2) + ( " EUR, ")+("procentu likme ") +("4 %.");
+document.getElementById("pieci_gadi").innerHTML =("Pēc 5 gadiem Jūs procentos saņemsiet ")+ procenti_5.toFixed(2) + ( " EUR, ")+("procentu likme ") +("5 %.");
 
 
+
+//Tatjanas P. risinājums - piemērs ar masīvu ( array) bez cikla (loop)
+
+/*var name = "Jolanta Jekabsone";
+var money = 15000;
+const rates = ["0.0001", "0.0002", "0.0003", "0.0004", "0.0005"];
+
+var profitFirst = money * rates[0];
+var profitSecond = (money + profitFirst) * rates[1];
+var profitThird = (money + profitSecond) * rates[2];
+var profitFourth = (money + profitThird) * rates[3];
+var profitFifth = (money + profitFourth) * rates[4];
+
+document.getElementById("client").innerHTML = name;
+document.getElementById("money").innerHTML = money;
+document.getElementById("procenti_1").innerHTML = profitFirst.toFixed(2);
+document.getElementById("procenti_2").innerHTML = profitSecond.toFixed(2);
+document.getElementById("procenti_3").innerHTML = profitThird.toFixed(2);
+document.getElementById("procenti_4").innerHTML = profitFourth.toFixed(2);
+document.getElementById("procenti_5").innerHTML = profitFifth.toFixed(2);*/
+
+//Sigitas L. risinājums - ar ciklu
+
+/*function rekina(){
+    
+    
+     
+    var procenti;
+    var rezultats;
+    var klients=document.getElementById('klientsInput').value; 
+    var summa=document.getElementById('summaInput').value; 
+    var pazinojums='Nav ievadīti visi dati';
+  
+    document.getElementById('rezultatsOut').innerHTML='Cien. '+klients+'<br>Mēs, banka, redzam, ka Jums kontā ir '+summa+' Eur<br>'; 
+            
+    for (let i = 1; i < 6; i++) {
+procenti=i/100; 
+rezultats=(summa*procenti)/100;
+
+document.getElementById('rezultatsOut').innerHTML=document.getElementById('rezultatsOut').innerHTML+'Ja jūs iegulīsiest to mūsu bankā uz '+i+' gadu, tad pec gada Jūs saņemsiet '+rezultats+' EUR.<br>';
+}
+
+
+    }*/
+    
