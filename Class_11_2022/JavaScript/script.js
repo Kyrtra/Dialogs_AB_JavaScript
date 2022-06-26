@@ -1,8 +1,46 @@
-// 3 mainīgie vai ilgstošā vai dilstošā secībā
+//Artūra 2  piemēri:
+//3 mainīgie sakārtoti tā, ka vienmēr a = lielākā vērtība un c = mazākā vērtība
 
-/*var c=50,
-    d=3,
-    e=100;
+/*
+var a=10,
+b=46,
+c=1,
+temp=null;
+
+console.log("a= "+ a + " b= "+ b + " c= " + c);
+
+if (b>a)
+{
+a=a+b;
+b=a-b;
+a=a-b;
+console.log("a= "+ a + " b= "+ b + " c= " + c);
+}
+if (c>a)
+{
+    a=a+c;
+    c=a-c;
+    a=a-c;
+console.log("a= "+ a + " b= "+ b + " c= " + c);
+}
+if (c>b)
+{
+    b=b+c;
+    c=b-c;
+    b=b-c;
+}
+
+console.log("a= "+ a + " b= "+ b + " c= " + c);
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// 3 mainīgie ilgstošā vai dilstošā secībā:
+
+/*
+  var c=71,
+   d=43,
+   e=88;
 
 if (c>d && c>e)
    {
@@ -46,39 +84,5 @@ else if (d>c && d>e)
           console.log("Nākamais ir c=" +c )
           console.log("Mazākais ir d=" +d )
         }
-   } */
-
-
-   ///////////////////////////////////////////////////////////////////////
-
-  /* var a=5,
-   b=6,
-   c=8,
-   temp=null;
-
-console.log("a= "+ a + " b= "+ b + " c= " + c);
-
-if (b>a)
-   {
-   a=a+b;
-   b=a-b;
-   a=a-b;
-   console.log("a= "+ a + " b= "+ b + " c= " + c);
    }
-if (c>a)
-   {
-       a=a+c;
-       c=a-c;
-       a=a-c;
-   console.log("a= "+ a + " b= "+ b + " c= " + c);
-   }
-if (c>b)
-   {
-       b=b+c;
-       c=b-c;
-       b=b-c;
-   }
-
-console.log("a= "+ a + " b= "+ b + " c= " + c); */
-
-//////////////////////////////////////////////////////////////////////////////////
+   */
