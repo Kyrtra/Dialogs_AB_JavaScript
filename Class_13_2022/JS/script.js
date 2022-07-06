@@ -24,7 +24,10 @@ for (let i = 1; i < 11; i++) {
     } else {
       text = text + i + "  nepāra skaitlis<br>";
     }
-}
+  } else {
+    text = text + i + "  nepāra skaitlis<br>";
+  }
+
   
   document.getElementById("pāra_nepāra").innerHTML = text;
   
