@@ -3,8 +3,8 @@ Palūgt lietotājam ierakstīt kādu tekstu (ar prompt) un saskaitīt cik tajā
 tekstā ir vārdi, kuru garums > 5.
 */
 
-/* 1.teksta rindas iegūšana:
-let text = "dffff";*/
+/* 1.teksta rindas iegūšana:*/
+//let text = "dffff";
 let text = prompt("Cien.lietotāj, lūdzu, ievadi kādu teikumu:");
 /*2. skaitīt burtus vārdā, katra atsevišķā vārdā vienmēr sākot skaitīt no 1
  */
@@ -28,9 +28,6 @@ for (let x of text) {
     burtu_skaitiitaajs_vaardaa++;
 
     if (simbolu_skaitiitaajs_teikumaa == text.length) {
-      console.log(
-        "Iepriekšējā vārdā bija " + burtu_skaitiitaajs_vaardaa + " burti"
-      );
       if (burtu_skaitiitaajs_vaardaa >= N) {
         deriigu_vaardu_skaits++;
       }
@@ -45,4 +42,5 @@ document.getElementById("teksta_analize").innerHTML =
   deriigu_vaardu_skaits +
   " vārdi, kuru" +
   " garums ir >= " +
-  N;
+  N; 
+

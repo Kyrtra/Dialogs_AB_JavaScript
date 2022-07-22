@@ -68,6 +68,6 @@ function dialogs() {
   var a = Number(prompt("Ievadiet a vērtību:"));
   b = Number(prompt("Ievadiet b vērtību:"));
   document.getElementById("summator_1").innerHTML =
-    a + " un " + b + " 4summa ir " + summator(a, b);
+    a + " un " + b + " summa ir " + summator(a, b);
 }
 dialogs();
