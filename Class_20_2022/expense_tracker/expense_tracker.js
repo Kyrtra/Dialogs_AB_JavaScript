@@ -13,13 +13,13 @@ const amount = document.getElementById('amount');
 //   { id: 4, text: 'Camera', amount: 150 }
 // ];
 const current_day = new Date;
-const datuma_teksts = current_day.toLocaleString('lv-LV', {timeZone: 'Europe/Riga'});
+const date_text = current_day.toLocaleString('lv-LV', {timeZone: 'Europe/Riga'});
 
 var today = new Date();
 var day = today.getDay();
 var day_list = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-document.getElementById("current_date").innerHTML = day_list[day]+",  " +  datuma_teksts;
+document.getElementById("current_date").innerHTML = day_list[day]+",  " +  date_text;
 
 
 const localStorageTransactions = JSON.parse(
