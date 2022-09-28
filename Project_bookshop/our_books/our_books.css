@@ -1,0 +1,326 @@
+/*=================== header ================*/
+@media screen {
+  #page_header {
+    
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 0;
+    border-left: 2px;
+    border-color: #2c2b3d;
+    background-color: #2c2b3d;
+    height: 170px;
+    background-image: url("/Project_bookshop/our_books/shopping_cart/images_1/Best-header-image.jpg");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center center;
+  }
+}
+
+@media print {
+  #header-image {
+    display: grid;
+    margin-right: auto;
+    margin-left: auto;
+    width: 20%;
+    top: 2em;
+  }
+}
+
+/*============================= Menu ======================*/
+
+.navbar {
+  display: grid;
+  grid-template-columns: 95% auto 5%;
+  grid-template-areas: "main_menu cart";  
+  background-color: #e58f23;
+  color: white;
+  padding: 15px;
+  
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar li {
+  display: inline-block;
+  padding: 0.4em;
+ 
+}
+.navbar a {
+  font-size: 1.5em;
+  font-family: Tahoma;
+  text-decoration: none;
+}
+.navbar li:hover {
+  background: none;
+}
+.navbar a:link,
+.navbar a:visited {
+  color: #fce4db;
+}
+.navbar a:hover {
+  color: #2c2b3d;
+}
+#language_menu {
+  float: right;
+  margin-right: 4em;
+  font-family: Tahoma;
+}
+.navbar::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+button{
+  background:#e58f23;
+	color: #2c2b3d;
+	border-radius: 0.25rem;
+  font-family: Tahoma;
+	font-size: 1.2rem;
+	font-weight: 400;
+	border: 1px solid #2c2b3d;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+	text-align: center;
+	padding: 0.375rem 0.75rem;
+}
+
+button:hover{
+  background:#fce4db;
+  cursor:pointer;
+}
+
+#b_utton{
+    display:block;
+    align-self: center;
+    width:80px;
+    background:#e58f23;
+    color: #2c2b3d;
+    border-radius: 0.25rem;
+    font-family: Tahoma;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: 1px solid #2c2b3d;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+    text-align: center;
+    padding: 0.375rem 0.75rem;
+    margin-left:55rem;
+  }
+  
+  #b_utton:hover{
+    background:#fce4db;
+    cursor:pointer;
+  }
+
+  /*=============================== Page content =================*/
+#page_content {
+  display: grid;
+}
+/* ===== Desktop width >= 901px =====*/
+@media all and (min-width: 901px) {
+  #page_content {
+    grid-template-columns: 20% auto 20%;
+    grid-template-areas: "SecondNavigation ContentWrapper Banners";
+  }
+}
+/* ===== Tablet width >= 401px  and <= 900px =====*/
+
+@media all and (max-width: 900px) {
+  #page_content {
+    grid-template-columns: 0% auto;
+    grid-template-areas:
+      "Banners Banners"
+      "SecondNavigation ContentWrapper";
+  }
+}
+/* ===== Mobile width <= 400 =====*/
+@media all and (max-width: 400px) {
+  #page_content {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "SecondNavigation"
+      "Banners"
+      "ContentWrapper";
+  }
+}
+
+#left-navigation {
+  grid-area: SecondNavigation;
+  background-color: white;
+}
+#ContentWrapper {
+  grid-area: ContentWrapper;
+  background-color: #e7e6f0;
+}
+
+#Banners {
+  grid-area: Banners;
+  background-color: #2c2b3d;
+  
+}
+.mySlides {
+  display: none;
+}
+
+/*===================== The left navigation bar======================= */
+.sidenav {
+  height: 100%;
+}
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 20px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 10px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/*removes the bullet symbols from the left nav bar list*/
+
+.remove-the-bullets ul,
+li {
+  list-style-type: none;
+}
+
+#cart_wrapper{
+font-size: 1.0 em;
+  font-family: Tahoma;
+  color: #2c2b3d;
+  position:relative;
+  margin-top:10em;
+}
+
+/*============================= Container for the books ==========================*/
+#banner-box{
+  display: block;
+  width:100%;
+  height:50%;
+
+}
+.content-banner {
+  display: block;
+  width: 100%;
+  
+  padding-top: 1em;
+}
+.items{
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 1em;
+}
+
+.items img{
+  width: 100%;
+  height: auto;
+}
+
+#ItemList {
+  display: grid;
+}
+/* ===== Desktop width >= 901px =====*/
+@media all and (min-width: 901px) {
+  #ItemList {
+    grid-template-columns: 20% 20% 20% 20% 20% 20% ;
+  }
+}
+/* ===== Tablet width >= 401px  and <= 900px =====*/
+
+@media all and (max-width: 900px) {
+  #ItemList {
+    grid-template-columns: 50% 50%;
+  }
+}
+/* ===== Mobile width <= 400 =====*/
+@media all and (max-width: 400px) {
+  #ItemList {
+    grid-template-columns: 80%;
+  }
+}
+.Item {
+  box-sizing: border-box;
+  display: grid;
+  border: 1px solid #d7cec7;
+  padding: 5px;
+  height: 100%;
+  grid-template-rows:80% auto max-content;
+        grid-template-columns:60% 40%;
+  background-color: white;
+  min-height:300px;
+        min-width:183px;
+}
+/*   ====  Desktop and Tablet ========*/
+@media all and (min-width: 401px) {
+  .Item {
+    grid-template-rows: 70% auto max-content;
+    grid-template-columns: 60% 40%;
+    min-height: 300px;
+    min-width: 183px;
+  } 
+  
+}
+
+/* ===== Mobile width <= 400 =====*/
+@media all and (max-width: 400px) {
+  .Item {
+    grid-template-rows: auto auto;
+    grid-template-columns: 40% auto;
+  }
+  .ItemImageWrapper {
+    grid-row: span 2;
+  }
+}
+/* Changes the look- font size, etc. of the following elements under the image*/
+
+.Author {
+  align-self: center;
+  text-align: center;
+  font-size: 1em;
+  color: #565656;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+/*=============================== Page footer =================*/
+
+#page-footer {
+  display: grid;
+  background-color: #2c2b3d;
+  width: 100%;
+  text-align: center;
+  font: Tahoma 1.1em;
+  padding: 30px 0px 30px 0px;
+}
+
+.footer-content {
+  display: block;
+  font: 1.2em Tahoma;
+  color: #fce4db;
+}
+
+.footer-content a:hover {
+  color: #2c2b3d;
+}
+
+a:link,
+a:visited {
+  color: #849d9b;
+}
+
+p {
+  display: block;
+  text-align: center;
+  font: 1.1em Tahoma;
+  color: #849d9b;
+}
+
+

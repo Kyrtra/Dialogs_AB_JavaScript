@@ -1,0 +1,267 @@
+/*=================== header ================*/
+@media screen {
+  #page_header {
+    border-top: 2px;
+    border-right: 2px;
+    border-bottom: 0;
+    border-left: 2px;
+    border-color: #2c2b3d;
+    background-color: #2c2b3d;
+    height: 170px;
+    background-image: url("images/Best-header-image.jpg");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center center;
+  }
+}
+
+@media print {
+  #header-image {
+    display: grid;
+    margin-right: auto;
+    margin-left: auto;
+    width: 20%;
+    top: 2em;
+  }
+}
+/*============================= Menu ======================*/
+nav {
+  overflow: hidden;
+  background-color: #e58f23;
+  border-top: 0px;
+  border-right: 2px;
+  border-bottom: 2px;
+  border-left: 2px;
+  border-style: solid;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav li {
+  display: inline-block;
+  padding: 0.5em;
+}
+nav a {
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: Tahoma;
+}
+nav li:hover {
+  background: none;
+}
+nav a:link,
+nav a:visited {
+  color: #fce4db;
+}
+nav a:hover {
+  color: #2c2b3d;
+}
+#language_menu {
+  float: right;
+  margin-right: 4em;
+  font-family: Tahoma;
+  font-size: 18pt;
+}
+nav::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/*=============================== Page content =================*/
+
+#page_content {
+  display: grid;
+}
+/* ===== Desktop width >= 901px =====*/
+@media all and (min-width: 901px) {
+  #page_content {
+    grid-template-columns: 20% auto 20%;
+    grid-template-areas: "SecondNavigation ContentWrapper Banners";
+  }
+}
+/* ===== Tablet width >= 401px  and <= 900px =====*/
+
+@media all and (max-width: 900px) {
+  #page_content {
+    grid-template-columns: 0% auto;
+    grid-template-areas:
+      "Banners Banners"
+      "SecondNavigation ContentWrapper";
+  }
+}
+/* ===== Mobile width <= 400 =====*/
+@media all and (max-width: 400px) {
+  #page_content {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "SecondNavigation"
+      "Banners"
+      "ContentWrapper";
+  }
+}
+
+#left-navigation {
+  grid-area: SecondNavigation;
+  background-color: #2c2b3d;
+}
+
+#ContentWrapper {
+  grid-area: ContentWrapper;
+  background-color: #b1c3c2;
+}
+
+#Banners {
+  grid-area: Banners;
+  background-color: #2c2b3d;
+}
+
+.sidenav a {
+  position: relative;
+  top: 100px; /*change the heigth of the side nav bar*/
+  padding: 29px 8px 6px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fce4db;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 20px 10px;
+}
+
+/*====================== Container for the books, middle section ======================= */
+
+#content-banner {
+  display: grid;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#book-list-wrapper {
+  display: grid;
+}
+/* ===== Desktop width >= 901px =====*/
+@media all and (min-width: 901px) {
+  #book-list-wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
+/* ===== Tablet width >= 401px  and <= 900px =====*/
+
+@media all and (max-width: 900px) {
+  #book-list-wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
+/* ===== Mobile width <= 400 =====*/
+@media all and (max-width: 400px) {
+  #book-list-wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
+#book-list-wrapper {
+  margin-top: 7px;
+}
+
+/*   ====  Desktop and Tablet ========*/
+
+@media all and (min-width: 401px) {
+  .main_content_subsection {
+    box-sizing: border-box;
+    display: grid;
+    border-style: groove;
+    border-width: 2px;
+    background-color: white;
+    text-align: justify;
+    margin: 7px;
+    font-family: Tahoma;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto 80%;
+  }
+
+  .bookcover-left {
+    float: left;
+    margin-right: 8px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+
+  .text-wrapper {
+    grid-template-rows: span 2;
+    margin-right: 15px;
+  }
+}
+
+/* ===== Mobile width <= 400 =====*/
+@media all and (max-width: 400px) {
+  .main_content_subsection {
+    box-sizing: border-box;
+    display: grid;
+    border-style: groove;
+    border-width: 2px;
+    background-color: white;
+    text-align: justify;
+    margin: 7px;
+    font-family: Tahoma;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto 55%;
+  }
+  .bookcover-left {
+    float: left;
+    margin-right: 8px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+
+  .text-wrapper {
+    grid-template-rows: span 4;
+    margin-right: 2px;
+  }
+}
+/*=============================== Page footer =================*/
+#page-footer {
+  display: grid;
+  background-color: #2c2b3d;
+  width: 100%;
+  text-align: center;
+  font: Tahoma 1.5em;
+  padding: 30px 0px 30px 0px;
+}
+
+.footer-links {
+  display: block;
+  font: 20px Tahoma;
+  color: #fce4db;
+}
+
+.footer-links a:hover {
+  color: #fce4db;
+}
+
+a:link,
+a:visited {
+  color: #849d9b;
+}
+
+.footer-text-wrapper {
+  display: block;
+  text-align: center;
+  font: 18px Tahoma;
+  color: #849d9b;
+}
