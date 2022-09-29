@@ -152,6 +152,7 @@ button:hover{
   background-color: white;
 }
 #ContentWrapper {
+  
   grid-area: ContentWrapper;
   background-color: #e7e6f0;
 }
@@ -171,7 +172,8 @@ button:hover{
 }
 /* Style page content */
 .main {
-  margin-left: 160px; /* Same as the width of the sidebar */
+  
+  margin-left:50px; /* Same as the width of the sidebar 160px*/
   padding: 20px 10px;
 }
 
@@ -212,21 +214,29 @@ font-size: 1.0 em;
   
   padding-top: 1em;
 }
+
+#item-wrapper{
+  display:flex;
+  padding: 3px;
+  
+}
+
 .items{
   width: 80%;
-  margin: auto;
+  margin:auto;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 1em;
+ 
 }
 
 .items img{
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
-#ItemList {
-  display: grid;
+/*#ItemList {
+  display: grid;/*
 }
 /* ===== Desktop width >= 901px =====*/
 @media all and (min-width: 901px) {
@@ -247,26 +257,27 @@ font-size: 1.0 em;
     grid-template-columns: 80%;
   }
 }
-.Item {
+.item {
   box-sizing: border-box;
   display: grid;
   border: 1px solid #d7cec7;
   padding: 5px;
   height: 100%;
-  grid-template-rows:80% auto max-content;
-        grid-template-columns:60% 40%;
+  grid-template-rows:auto 10% 10% 10% 10%;
+  grid-template-columns:100%;
   background-color: white;
   min-height:300px;
-        min-width:183px;
+  min-width:183px;
+  margin:0.1em;
 }
 /*   ====  Desktop and Tablet ========*/
 @media all and (min-width: 401px) {
-  .Item {
-    grid-template-rows: 70% auto max-content;
+  /*.itemsss {
+    grid-template-rows: 50% auto max-content;
     grid-template-columns: 60% 40%;
     min-height: 300px;
     min-width: 183px;
-  } 
+  } */
   
 }
 
@@ -276,20 +287,11 @@ font-size: 1.0 em;
     grid-template-rows: auto auto;
     grid-template-columns: 40% auto;
   }
-  .ItemImageWrapper {
-    grid-row: span 2;
-  }
+  
 }
 /* Changes the look- font size, etc. of the following elements under the image*/
 
-.Author {
-  align-self: center;
-  text-align: center;
-  font-size: 1em;
-  color: #565656;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
+
 /*=============================== Page footer =================*/
 
 #page-footer {
@@ -306,16 +308,6 @@ font-size: 1.0 em;
   font: 1.2em Tahoma;
   color: #fce4db;
 }
-
-.footer-content a:hover {
-  color: #2c2b3d;
-}
-
-a:link,
-a:visited {
-  color: #849d9b;
-}
-
 p {
   display: block;
   text-align: center;

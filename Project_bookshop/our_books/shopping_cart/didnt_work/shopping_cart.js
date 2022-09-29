@@ -1,4 +1,4 @@
-import data from './data.js'
+import data from '../data.js'
 const itemsContainer = document.getElementById('items')
 const itemList = document.getElementById('item-list')
 const cartQty = document.getElementById('cart-qty')
