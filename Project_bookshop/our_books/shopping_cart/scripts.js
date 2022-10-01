@@ -49,7 +49,8 @@ for (let i = 0; i < data.length; i += 1) {
     button.innerHTML = "Add to Cart"
     newDiv.appendChild(button)
 }
-//
+//Add the function to the button
+
 const all_items_button = Array.from(document.querySelectorAll("button"))
 all_items_button.forEach(elt => elt.addEventListener('click', () => {
     addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
@@ -61,13 +62,51 @@ all_items_button.forEach(elt => elt.addEventListener('click', () => {
 
 const cart =[]
 
+//-------------------------------------------------------------------------------------
+//Handle Change events on update input
+itemList.onchange = function(e) {
+    if(e.target && e.target.classList.contains('update')){
+        const name = e.target.dataset.name
+        const qty = parseInt(e.target.value)
+        updateCart(name, qty)
+    }
+}
+//--------------------------------------------------------------------------------------
+//Handle clicks on list
+itemList.onclick = function(e){
+    //console.log("Clicked List!!!")
+    //console.log(e.target)
+    if(e.target && e.target.classList.contains('remove')){
+        const name = e.target.dataset.name // data-name="????" e-event target
+        removeItem(name)
+    } else if(e.target && e.target.classList.contains('add-one')){
+        const name = e.target.dataset.name
+        addItem(name)
+    } else if(e.target && e.target.classList.contains('remove-one')){
+        const name = e.target.dataset.name
+        removeItem(name, 1)
+    }
+
+}
+//--------------------------------------------------------------------------------------
+//handle add form submit so when nothing is added and is not in the cart, the form does 
+// not show
+addForm.onsubmit = function(e) {
+e.preventDefault()
+const name = itemName.value
+const price = itemPrice.value
+addItem(name, price)
+}
+
+
 //--------------------------------------------------------------------------------------
 //Add Item
 function addItem(name, price){
  for(let i = 0; i< cart.length; i +=1){
     if(cart[i].name === name) {
         cart[i].qty += 1
-        return  
+        showItems()
+        return 
     }
    }
    const item = { name, price, qty:1}
@@ -85,7 +124,14 @@ function showItems() {
     for (let i =0; i<cart.length; i +=1) {
        //console.log(` ${ cart[i].name } EUR ${cart[i].price} x ${cart[i].qty}`)  
         const {name, price, qty } = cart[i]
-        itemStr += `<li> ${name} EUR ${price} x ${qty} = ${qty * price} </li>`
+
+        itemStr += `<li>
+         ${name} EUR ${price} x ${qty} = ${qty * price}
+         <button class="remove" data-name="${name}">Remove</button> 
+         <button class="add-one" data-name="${name}">+</button> 
+         <button class="remove-one" data-name="${name}">-</button> 
+         <input class="update" type="number" data-name="${name}"></input>
+         </li>`//data-id(name) is a developer attribute
     }
     itemList.innerHTML = itemStr
 
@@ -123,9 +169,26 @@ function removeItem(name, qty = 0) {
             }
             if(cart[i].qty < 1 || qty === 0) {
               cart.splice(i, 1)
-            }          
+            }  
+            showItems()        
+        
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------
+function updateCart(name,qty){
+    for(let i = 0; i < cart.length; i +=1) {
+        if (cart[i].name ===name) {
+            if(qty < 1){
+               removeItem(name) 
+               return
+            }
+            cart[i].qty = qty
+            showItems()
             return
         }
+
     }
 }
 
